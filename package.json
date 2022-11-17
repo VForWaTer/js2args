@@ -1,0 +1,19 @@
+{
+  "name": "js2args",
+  "version": "0.1.0",
+  "description": "Create an Object with config from JSON files with standard files already loaded",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vforwater/js2args.git"
+  },
+  "author": "Mirko Mälicke",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/vforwater/js2args/issues"
+  },
+  "homepage": "https://github.com/vforwater/js2args#readme"
+}
