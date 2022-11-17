@@ -20,7 +20,7 @@ const getParameter = () => {
     // foreach param passed
     Object.entries(params[toolName]).forEach(([key, val]) => {
         // get the param conf
-        const parConf = toolConf[key]
+        const parConf = toolConf.parameters[key]
         
         // if it is not specified, add anyway
         if (!parConf) {
@@ -31,7 +31,7 @@ const getParameter = () => {
                 kwargs[key] = new Date(val)
             }
 
-            if (parConf['type'] === 'file') {
+            if (parConf.type === 'file') {
                 ext = val.split('.').pop().toLowerCase()
 
                 // switch the file extension
@@ -42,7 +42,7 @@ const getParameter = () => {
                 
                 // dat
                 else if (ext === 'dat') {
-                    raw = fs.readFileSync(val)
+                    raw = fs.readFileSync(val, 'utf-8')
                     const dat = []
                     raw.split('\n').forEach(line => {
                         if (!line.startsWith('#')) {
@@ -58,8 +58,8 @@ const getParameter = () => {
                 // read csv data
                 else if (ext === 'csv') {
                     // 
-                    raw = fs.readFileSync(val).split('\n')
-                    const recs = papa.parse(raw, {header: true})
+                    raw = fs.readFileSync(val, 'utf-8')
+                    const recs = papa.parse(raw, {header: true}).data
 
                     // add 
                     kwargs[key] = recs
