@@ -2,7 +2,7 @@
   "name": "js2args",
   "version": "0.1.0",
   "description": "Create an Object with config from JSON files with standard files already loaded",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/vforwater/js2args/issues"
   },
-  "homepage": "https://github.com/vforwater/js2args#readme"
+  "homepage": "https://github.com/vforwater/js2args#readme",
+  "dependencies": {
+    "js-yaml": "^4.1.0",
+    "papaparse": "^5.3.2"
+  }
 }
